@@ -1,0 +1,18 @@
+{
+  "name": "hubino-mono-repo",
+  "private": true,
+  "scripts": {
+    "start": "concurrently \"npm run backend\" \"npm run frontend\"",
+    "dev": "lerna run dev --parallel",
+    "backend": "cd packages/backend && node index.js",
+    "frontend": "cd packages/frontend && npm start"
+  },
+  "workspaces": [
+    "packages/*"
+  ],
+  "devDependencies": {
+    "concurrently": "^8.2.2",
+    "express": "^4.18.2",
+    "lerna": "^8.1.2"
+  }
+}
